@@ -1,2 +1,3 @@
-# ericjardon.github.io
-Github Pages Setup
+# ericjardon
+
+_The really important kind of freedom involves attention, and awareness, and discipline, and effort, and being able truly to care about other people and to sacrifice for them, over and over, in myriad petty little unsexy ways, every day._
