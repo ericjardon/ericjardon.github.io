@@ -1,0 +1,141 @@
+<html>
+
+<head>
+    <script type="application/javascript">
+        function draw() {
+            var canvas = document.getElementById("canvas");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+
+                const brown = "rgb(140, 83, 27)";
+                const darkBrown = "rgb(112, 66, 21)"
+                const black = "rgb(0,0,0)";
+                const pink = "rgb(240, 209, 194)";
+                const k = 2; // scale
+
+                // back legs
+                ctx.beginPath();
+                // x, y, rx, ry, rotation, start, end, cc
+                ctx.ellipse(k * (142), k * 180, k * 9, k * 15, 0, 0, Math.PI * 2);
+                ctx.fillStyle = darkBrown;
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.ellipse(k * (201), k * 180, k * 9, k * 15, 0, 0, Math.PI * 2);
+                ctx.fillStyle = darkBrown;
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.ellipse(430, 330, 18, 40, 5.16, 0, Math.PI * 2);
+                ctx.fillStyle = brown;
+                ctx.fill();
+
+                // Body
+                ctx.fillStyle = brown;
+                ctx.fillRect(k * 100, k * 100, k * 85, k * 80);
+                // sideBody
+                ctx.fillStyle = darkBrown;
+                ctx.fillRect(k * 185, k * 100, k * 25, k * 80);
+
+                // front legs
+                ctx.beginPath();
+                ctx.ellipse(k * (109), k * 180, k * 9, k * 15, 0, 0, Math.PI * 2);
+                ctx.fillStyle = brown;
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.ellipse(k * (176), k * 180, k * 9, k * 15, 0, 0, Math.PI * 2);
+                ctx.fillStyle = brown;
+                ctx.fill();
+
+                // eyes
+                ctx.fillStyle = black;
+
+                ctx.beginPath();
+                ctx.arc(240, 235, 25, 0, Math.PI, false);
+                ctx.stroke();
+                //ctx.fill();
+                ctx.beginPath();
+                ctx.arc(240 + 75, 235, 25, 0, Math.PI, false);
+                ctx.stroke();
+
+
+                //nose
+                ctx.beginPath();
+                var w = 15;
+                var h = 15;
+                var y_ = 280
+                var x_ = 277;
+                ctx.moveTo(x_, y_);
+                ctx.lineTo(x_ - w, y_ - h);
+                ctx.lineTo(x_ + w, y_ - h);
+                ctx.fill();
+
+                // mouth
+                ctx.beginPath();
+                ctx.arc(x_ - 20, y_, 20, 0, (Math.PI) / 2.0, false);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(x_ + 20, y_, 20, (Math.PI), (Math.PI) / 2.0, true);
+                ctx.stroke();
+
+                // ears
+                ctx.fillStyle = brown;
+                ctx.beginPath();
+                var w = 25;
+                var h = -40;
+                var y_ = 160
+                var x_ = 225;
+                ctx.moveTo(x_, y_);
+                ctx.lineTo(x_ - w, y_ - h);
+                ctx.lineTo(x_ + w, y_ - h);
+                ctx.fill();
+
+                ctx.beginPath();
+                var w = 25;
+                var h = -40;
+                var y_ = 160
+                var x_ = 330;
+                ctx.moveTo(x_, y_);
+                ctx.lineTo(x_ - w, y_ - h);
+                ctx.lineTo(x_ + w, y_ - h);
+                ctx.fill();
+
+
+                ctx.fillStyle = pink;
+                ctx.beginPath();
+                var w = 25 * 0.7;
+                var h = -40 * 0.7;
+                var y_ = 170;
+                var x_ = 225;
+                ctx.moveTo(x_, y_);
+                ctx.lineTo(x_ - w, y_ - h);
+                ctx.lineTo(x_ + w, y_ - h);
+                ctx.fill();
+
+                ctx.beginPath();
+                var w = 25 * 0.7;
+                var h = -40 * 0.7;
+                var y_ = 170
+                var x_ = 330;
+                ctx.moveTo(x_, y_);
+                ctx.lineTo(x_ - w, y_ - h);
+                ctx.lineTo(x_ + w, y_ - h);
+                ctx.fill();
+
+
+
+            }
+        }
+    </script>
+
+    <title>(っ˘ω˘ς )</title>
+
+</head>
+
+<body onload="draw();">
+    <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+
+</html>
